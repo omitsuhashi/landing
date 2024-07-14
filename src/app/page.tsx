@@ -1,26 +1,41 @@
-import {Box, Container, Typography} from "@mui/material";
+import {
+  AppBar,
+  Box, Button, TextField, Toolbar,
+  Typography,
+} from "@mui/material";
 
 export default function Home() {
   return (
-        <Container component="main" sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          minHeight: '100vh',
-        }}>
-          <Box sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-            <Typography>私たちが目指すのは、真に意味のあるものの創造です。</Typography>
-            <Typography>誰のために？</Typography>
-            <Typography>それは、社名に込められた通り、3者のためです。</Typography>
-            <Typography>「お客様」「取引先」「従業員」</Typography>
-            <Typography>そのため、私たちは一切の妥協をしません。</Typography>
-          </Box>
-        </Container>
+      <>
+        {/* header */}
+
+        {/* body */}
+        <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+            minHeight="100vh"
+            textAlign="center"
+        >
+          <Typography variant="h4" gutterBottom>
+            価値を創造します
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            「お客様」「取引先」「従業員」
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            3者にとっての価値です
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            そのための手段は問いません
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            妥協もありません
+          </Typography>
+        </Box>
+
+        {/* footer */}
+      </>
   );
 }
