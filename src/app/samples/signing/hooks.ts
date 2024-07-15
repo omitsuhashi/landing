@@ -1,10 +1,5 @@
 import { ChangeEvent, useEffect, useState } from "react";
 
-async function exportKey(key: CryptoKey) {
-  const exported = await window.crypto.subtle.exportKey("jwk", key);
-  return JSON.stringify(exported, null, 2);
-}
-
 const ALGORITHM = "RSASSA-PKCS1-v1_5";
 
 export function useSigning() {
@@ -16,16 +11,40 @@ export function useSigning() {
     if (!file || !privateKey) {
       return;
     }
+
     const fileBuf = await file.arrayBuffer();
-    const result = await window.crypto.subtle.sign(
-      ALGORITHM,
-      privateKey,
-      fileBuf,
-    );
+    return await window.crypto.subtle.sign(ALGORITHM, privateKey, fileBuf);
+  }
+
+  async function validate(signature: BufferSource, data: BufferSource) {
+    if (!publicKey) {
+      return;
+    }
+
+    return window.crypto.subtle.verify(ALGORITHM, publicKey, signature, data);
+  }
+
+  async function exportKey(key: CryptoKey) {
+    return await window.crypto.subtle.exportKey("jwk", key);
+  }
+
+  async function importKey(key: BufferSource) {
+    return await window.crypto.subtle.importKey("raw", key, ALGORITHM, true, [
+      "sign",
+      "verify",
+    ]);
+  }
+
+  function download(data: ArrayBuffer) {
+    // 1. ダウンロードする署名データをBlobに変換
+    const blob = new Blob([data], { type: "application/octet-stream" });
+
+    // 2. BlobからURLを作成
+    return URL.createObjectURL(blob);
   }
 
   useEffect(() => {
-    async function createKeys() {
+    (async () => {
       const { publicKey, privateKey } = await window.crypto.subtle.generateKey(
         {
           name: ALGORITHM,
@@ -38,8 +57,7 @@ export function useSigning() {
       );
       setPublicKey(publicKey);
       setPrivateKey(privateKey);
-    }
-    createKeys().then();
+    })();
   }, []);
 
   return {
