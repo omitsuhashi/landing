@@ -1,25 +1,20 @@
 "use client";
 
 import { useSigning } from "@/app/samples/signing/hooks";
-import { Box } from "@mui/material";
-import KeyGenerator from "@/app/samples/signing/key-generator";
+import { Box, Button } from "@mui/material";
 import FileUploader from "@/app/samples/signing/file-uploader";
-import SignButton from "@/app/samples/signing/sign-button";
-import ValidateButton from "@/app/samples/signing/validate-button";
 
 export default function SignForm() {
-  const { privateKey, publicKey } = useSigning();
+  const { onUploadSignTargetFile, onVerify, onSigning } = useSigning();
   return (
     <>
       <Box>
-        {/* キーペアを生成してここに */}
-        <KeyGenerator publicKey={publicKey} privateKey={privateKey} />
-        {/* ファイルのアップロード */}
-        <FileUploader />
-        {/* 署名実行 */}
-        <SignButton />
-        {/* バリデーション実行 */}
-        <ValidateButton />
+        {/* 1. ファイルのアップロード */}
+        <FileUploader onUpload={onUploadSignTargetFile} targetName="file" />
+        {/* 2. 署名実行 */}
+        <Button onClick={onSigning}>signing</Button>
+        {/* 3. バリデーション実行 */}
+        <Button onClick={onVerify}>verify</Button>
       </Box>
     </>
   );
