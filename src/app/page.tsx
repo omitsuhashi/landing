@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Icon, Toolbar, Typography } from "@mui/material";
 
 export default function Home() {
   return (
@@ -9,8 +9,13 @@ export default function Home() {
         sx={{ backgroundColor: "transparent", boxShadow: "none" }}
       >
         <Toolbar>
-          <Typography color="black" variant="h6" sx={{ flexGrow: 1 }}>
-            Logo(WIP)
+          <Typography
+            color="black"
+            variant="h6"
+            sx={{ flexGrow: 1 }}
+            alignContent="center"
+          >
+            the3
           </Typography>
           <Button color="primary">お問い合わせ</Button>
         </Toolbar>
@@ -43,6 +48,8 @@ export default function Home() {
           </Typography>
         </Box>
       </Box>
+
+      <Box></Box>
 
       {/* footer */}
     </>
