@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Icon, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Link, Toolbar, Typography } from "@mui/material";
 
 export default function Home() {
   return (
@@ -17,6 +17,7 @@ export default function Home() {
           >
             the3
           </Typography>
+          <Link href="mailto:omitsuhashi.the3@gmail.com">お問い合わせ</Link>
           <Button color="primary">お問い合わせ</Button>
         </Toolbar>
       </AppBar>
