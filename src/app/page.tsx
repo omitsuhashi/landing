@@ -18,7 +18,6 @@ export default function Home() {
             the3
           </Typography>
           <Link href="mailto:omitsuhashi.the3@gmail.com">お問い合わせ</Link>
-          <Button color="primary">お問い合わせ</Button>
         </Toolbar>
       </AppBar>
 
