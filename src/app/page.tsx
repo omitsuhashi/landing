@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Link, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Link, Toolbar, Typography } from "@mui/material";
 
 export default function Home() {
   return (
@@ -38,7 +38,7 @@ export default function Home() {
             「お客様」「取引先」「従業員」
           </Typography>
           <Typography variant="body1" gutterBottom>
-            3者にとっての価値です
+            3者それぞれにとっての価値です
           </Typography>
           <Typography variant="body1" gutterBottom>
             そのための手段は問いません
