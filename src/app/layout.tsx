@@ -4,8 +4,9 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import { Container, CssBaseline, ThemeProvider } from "@mui/material";
+import { Box, Container, CssBaseline, ThemeProvider } from "@mui/material";
 import defaultTheme from "@/theme";
+import HeaderBase from "@/components/molecular/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,8 +24,14 @@ export default function RootLayout({
     <html lang="en">
       <ThemeProvider theme={defaultTheme}>
         <CssBaseline />
+
+        {/* body */}
         <body className={inter.className}>
-          <Container maxWidth="lg">{children}</Container>
+          {/* header */}
+          <Box marginX={4}>
+            <HeaderBase />
+          </Box>
+          <Container maxWidth="md">{children}</Container>
         </body>
       </ThemeProvider>
     </html>
