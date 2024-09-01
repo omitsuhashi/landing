@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import { Roboto } from 'next/font/google';
-import { createTheme } from '@mui/material/styles';
+import { Noto_Sans_JP, Shippori_Mincho } from "next/font/google";
+import { createTheme } from "@mui/material/styles";
 
-const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
+const font = Shippori_Mincho({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
 });
 
 const defaultTheme = createTheme({
   palette: {
-    mode: 'light',
+    mode: "light",
   },
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: font.style.fontFamily,
   },
   components: {
     MuiAlert: {
       styleOverrides: {
         root: ({ ownerState }) => ({
-          ...(ownerState.severity === 'info' && {
-            backgroundColor: '#60a5fa',
+          ...(ownerState.severity === "info" && {
+            backgroundColor: "#60a5fa",
           }),
         }),
       },
