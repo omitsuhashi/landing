@@ -17,17 +17,14 @@ export default function Philosophy() {
           格好良く生きる
         </Typography>
         <Stack alignItems="flex-start">
-          <Typography>そのために、中途半端な仕事はしない</Typography>
-          <Typography>そのために、常にベストを考える</Typography>
-          <Typography>
-            そのために、後悔するような選択を安易に取らない
-          </Typography>
+          <Typography>そのために、全力で仕事をする</Typography>
+          <Typography>そのために、後悔しない選択を行う</Typography>
           <Typography>そのために、人に喜ばれる仕事をする</Typography>
         </Stack>
-        <Box py={4}>
-          <Divider />
-        </Box>
       </Stack>
+      <Box py={4}>
+        <Divider />
+      </Box>
     </>
   );
 }
