@@ -17,7 +17,7 @@ export default function Philosophy() {
           格好良く生きる
         </Typography>
         <Stack alignItems="flex-start">
-          <Typography>そのために、全力で仕事をする</Typography>
+          <Typography>そのために、妥協せず全力で仕事をする</Typography>
           <Typography>そのために、後悔しない選択を行う</Typography>
           <Typography>そのために、人に喜ばれる仕事をする</Typography>
         </Stack>
